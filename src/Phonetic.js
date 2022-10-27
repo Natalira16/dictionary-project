@@ -1,4 +1,5 @@
 import React from "react";
+import "./Phonetic.css";
 // import Listen from "./Listen";
 
 export default function Phonetic(props) {
@@ -21,9 +22,8 @@ export default function Phonetic(props) {
 
     return (
         <div className="Phonetic">
-            <button type="button" className="btn" onClick={handleListen}><audio src={apiUrl}></audio>🔊</button>
-            <br />
-            {props.phonetic.text}
+            <button type="button" className="btn audio-btn" onClick={handleListen}><audio src={apiUrl}></audio>🔊</button>
+            <span className="phonetic-text">{props.phonetic.text}</span>
         </div >
     )
 }

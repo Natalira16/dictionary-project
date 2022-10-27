@@ -3,9 +3,10 @@ import axios from "axios";
 import Results from "./Results";
 import './Dictionary.css';
 
-export default function Dictionary() {
-    let [keyword, setKeyword] = useState("");
+export default function Dictionary(props) {
+    let [keyword, setKeyword] = useState(props.defaultKeyword);
     let [results, setResults] = useState(null);
+    let [loaded, setLoaded] = useState(false);
 
     function handleResponse(response) {
         // console.log(response.data[0]);
@@ -17,21 +18,42 @@ export default function Dictionary() {
         setKeyword(event.target.value);
     }
 
-    function search(event) {
-        event.preventDefault();
-
+    function search() {
         // documentation: https://dictionaryapi.dev/
         let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en_US/${keyword}`;
         // console.log(apiUrl);
         axios.get(apiUrl).then(handleResponse);
     }
 
-    return (
-        <div className="Dictionary">
-            <form onSubmit={search}>
-                <input type="search" onChange={handleKeywordChange} />
-            </form>
-            <Results results={results} keyword={keyword} />
-        </div>
-    )
+    function handleSubmit(event) {
+        event.preventDefault();
+        search();
+    }
+
+    function load() {
+        setLoaded(true);
+        search();
+    }
+
+    if (loaded) {
+        return (
+            <div className="Dictionary">
+                <section>
+                    <h1>What word do you want to look up?</h1>
+                    <form onSubmit={handleSubmit}>
+                        <input type="search" placeholder="sunset" onChange={handleKeywordChange} />
+                    </form>
+                    <div className="hint text-start">
+                        suggested words: sunset, wine, yoga, forest, etc.
+                    </div>
+                </section>
+                <Results results={results} keyword={keyword} />
+            </div>
+        )
+    } else {
+        load();
+        return (
+            "Loading..."
+        )
+    }
 }

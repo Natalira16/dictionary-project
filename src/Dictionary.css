@@ -1,7 +1,41 @@
-.Results-title {
-    font-size: 36px;
+.Dictionary h1 {
+    text-align: left;
+    font-size: 28px;
+    margin-bottom: 15px;
 }
 
-.Meaning-title {
-    font-size: 18px;
+.Dictionary section {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    margin: 30px auto;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.Dictionary input {
+    width: 100%;
+    padding: 8px 10px;
+    color: rgb(70, 70, 70);
+    border: 1px solid rgba(200, 200, 200, 0.8);
+    border-radius: 4px;
+}
+
+.Dictionary input:focus,
+.Dictionary input:hover {
+    outline-style: none;
+}
+
+.Dictionary .hint {
+    margin: 5px auto;
+    font-size: 12px;
+    color: rgba(70, 70, 70, 0.5);
+}
+
+
+
+@media (max-width:550px) {
+    .Dictionary h1 {
+        text-align: center;
+        font-size: 20px;
+    }
 }

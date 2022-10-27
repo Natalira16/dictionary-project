@@ -1,3 +1,7 @@
+body {
+  background: rgba(100, 168, 237, 0.125);
+}
+
 .App {
   text-align: center;
 }
@@ -15,4 +19,11 @@
 .App-footer {
   text-align: center;
   margin: 30px 0;
+}
+
+
+@media (max-width:550px) {
+  .App-logo {
+    max-width: 350px;
+  }
 }
