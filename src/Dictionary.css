@@ -12,6 +12,10 @@
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
+.Dictionary form {
+    display: inline-flex;
+}
+
 .Dictionary input {
     width: 100%;
     padding: 8px 10px;
@@ -23,6 +27,14 @@
 .Dictionary input:focus,
 .Dictionary input:hover {
     outline-style: none;
+}
+
+.Dictionary .search-button {
+    margin-left: 12px;
+    padding: 2px 8px;
+    font-size: 24px;
+    border: 1px solid rgba(200, 200, 200, 0.8);
+    border-radius: 50%;
 }
 
 .Dictionary .hint {
