@@ -5,6 +5,9 @@
 
 .Synonyms p {
     display: inline-block;
-    padding-right: 15px;
+    margin-right: 10px;
+    padding: 2px 5px;
     font-size: 12px;
+    border: 1px solid #2e6fb0cd;
+    border-radius: 8px;
 }
