@@ -15,8 +15,8 @@ export default function App() {
         <footer className="App-footer">
           <small>
             <div className="footer">
-              <nav class="navbar navbar-expand-lg footer justify-content-center text-center">
-                <p class="m-0 p-3">
+              <nav className="navbar navbar-expand-lg footer justify-content-center text-center">
+                <p className="m-0 p-3">
                   This poject was coded by Nataliia Medvedenko. <a href="https://github.com/Natalira16/dictionary-project" target="_blank" rel="noreferrer">Open-sourced on GitHub</a> and <a href="https://project-dictionary-app.netlify.app/" target="_blank" rel="noreferrer">hosted on Netlify</a>.
                 </p>
               </nav>
